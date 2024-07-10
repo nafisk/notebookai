@@ -1,2 +1,1 @@
-# notebookai
-# notebookai
+# notebookai - find your notes faster
