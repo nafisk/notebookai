@@ -1,1 +1,1 @@
-# notebookai - search faster with ai
+# notebookai - Intelligent Note Taking App

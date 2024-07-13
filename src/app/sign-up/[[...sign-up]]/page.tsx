@@ -1,5 +1,11 @@
 import { SignUp } from "@clerk/nextjs";
 import React from "react";
+import { Metadata } from "next";
+
+const metadata: Metadata = {
+  title: "NotebookAI - Sign Up",
+  description: "Sign Up Page",
+};
 
 export default function SignUpPage() {
   return (

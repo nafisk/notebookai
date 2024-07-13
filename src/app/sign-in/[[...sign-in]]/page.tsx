@@ -1,5 +1,11 @@
 import { SignIn } from "@clerk/nextjs";
+import { Metadata } from "next";
 import React from "react";
+
+const metadata: Metadata = {
+  title: "NotebookAI - Sign In",
+  description: "Sign In Page",
+};
 
 export default function SignInPage() {
   return (
