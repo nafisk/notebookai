@@ -6,7 +6,7 @@ type LoadingButtonProps = {
   loading: boolean;
 } & ButtonProps;
 
-export default function loadingButton({
+export default function LoadingButton({
   children,
   loading,
   ...props
