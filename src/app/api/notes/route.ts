@@ -1,4 +1,6 @@
 import { createNoteSchema } from "@/lib/validation/note";
+import { auth } from "@clerk/nextjs/server";
+import prisma from "@/lib/db/prisma";
 
 export async function POST(req: Request) {
   try {
