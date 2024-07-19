@@ -28,8 +28,8 @@ export default function AddEditNoteDialog({
   setOpen,
   noteToEdit,
 }: AddEditNoteDialogProps) {
+  
   const router = useRouter();
-
   const form = useForm<CreateNoteSchema>({
     resolver: zodResolver(createNoteSchema),
     defaultValues: {
