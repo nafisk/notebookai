@@ -38,7 +38,7 @@ export default function NavBar() {
       </div>
       <AddEditNoteDialog
         open={showAddEditNoteDialog}
-        setOpen={showAddEditNoteDialog}
+        setOpen={setShowAddEditNoteDialog}
       />
     </>
   );

@@ -1,6 +1,8 @@
 "use client";
+
 import { Note as NoteModel } from "@prisma/client";
 import { useState } from "react";
+import AddEditNoteDialog from "./AddEditNoteDialog";
 import {
   Card,
   CardContent,
@@ -8,7 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import AddEditNoteDialog from "./AddEditNoteDialog";
 
 interface NoteProps {
   note: NoteModel;
@@ -37,7 +38,7 @@ export default function Note({ note }: NoteProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="whitespace-re-line">{note.content}</p>
+          <p className="whitespace-pre-line">{note.content}</p>
         </CardContent>
       </Card>
       <AddEditNoteDialog
