@@ -1,49 +1,63 @@
 import { notesIndex } from "@/lib/db/pinecone";
 import prisma from "@/lib/db/prisma";
-import { getEmbedding } from "@/lib/openai";
-import { auth } from "@clerk/nextjs/server";
+import openai, { getEmbedding } from "@/lib/openai";
+import { auth } from "@clerk/nextjs";
+import { OpenAIStream, StreamingTextResponse } from "ai";
 import { ChatCompletionMessage } from "openai/resources/index.mjs";
 
 export async function POST(req: Request) {
   try {
-    // parse the request body
     const body = await req.json();
     const messages: ChatCompletionMessage[] = body.messages;
 
-    // use only last six messages
+    // Truncate the messages to the last 6 messages
     const messagesTruncated = messages.slice(-6);
 
-    // create vector embedding for the messages
+    // Get the embedding of the last 6 messages
     const embedding = await getEmbedding(
-      // get message text and join with new line
       messagesTruncated.map((message) => message.content).join("\n"),
     );
 
-    // use userId to find correct notes
+    // Query the notes index for the top 4 most relevant notes
     const { userId } = auth();
     const vectorQueryResponse = await notesIndex.query({
       vector: embedding,
-      topK: 5, // # of notes to return
+      topK: 4,
       filter: { userId },
     });
 
+    // Fetch the relevant notes from the database
     const relevantNotes = await prisma.note.findMany({
       where: {
-        id: { in: vectorQueryResponse.matches.map((result) => result.id) },
+        id: {
+          in: vectorQueryResponse.matches.map((match) => match.id),
+        },
       },
     });
 
     console.log("Relevant notes found: ", relevantNotes);
 
+    // Create a system message to display the relevant notes to the user
     const systemMessage: ChatCompletionMessage = {
-      role: "system",
+      role: "assistant",
       content:
         "You are an intelligent note-taking app. You answer the user's question based on their existing notes. " +
         "The relevant notes for this query are:\n" +
-        relevantNotes.map(
-          (note) => `Title: ${note.title}\n\nContent:\n${note.content}`,
-        ),
+        relevantNotes
+          .map((note) => `Title: ${note.title}\n\nContent:\n${note.content}`)
+          .join("\n\n"),
     };
+
+    // Send the messages to the GPT-3.5 model for completion
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      stream: true,
+      messages: [systemMessage, ...messagesTruncated],
+    });
+
+    // Return the response as a streaming response
+    const stream = OpenAIStream(response);
+    return new StreamingTextResponse(stream);
   } catch (error) {
     console.error(error);
     return Response.json({ error: "Internal server error" }, { status: 500 });
