@@ -62,7 +62,7 @@ export default function AddEditNoteDialog({
           method: "POST",
           body: JSON.stringify(input),
         });
-        console.log("response", response);
+        // console.log("response", response);
         if (!response.ok) throw Error("Status code: " + response.status);
         form.reset();
       }

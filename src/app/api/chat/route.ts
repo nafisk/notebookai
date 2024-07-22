@@ -10,23 +10,20 @@ export async function POST(req: Request) {
     const body = await req.json();
     const messages: ChatCompletionMessage[] = body.messages;
 
-    // Truncate the messages to the last 6 messages
     const messagesTruncated = messages.slice(-6);
 
-    // Get the embedding of the last 6 messages
     const embedding = await getEmbedding(
       messagesTruncated.map((message) => message.content).join("\n"),
     );
 
-    // Query the notes index for the top 4 most relevant notes
     const { userId } = auth();
+
     const vectorQueryResponse = await notesIndex.query({
       vector: embedding,
       topK: 4,
       filter: { userId },
     });
 
-    // Fetch the relevant notes from the database
     const relevantNotes = await prisma.note.findMany({
       where: {
         id: {
@@ -37,7 +34,6 @@ export async function POST(req: Request) {
 
     console.log("Relevant notes found: ", relevantNotes);
 
-    // Create a system message to display the relevant notes to the user
     const systemMessage: ChatCompletionMessage = {
       role: "assistant",
       content:
@@ -48,16 +44,21 @@ export async function POST(req: Request) {
           .join("\n\n"),
     };
 
-    // Send the messages to the GPT-3.5 model for completion
+    console.log("System message: ", systemMessage);
+
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       stream: true,
       messages: [systemMessage, ...messagesTruncated],
     });
 
-    // Return the response as a streaming response
-    const stream = OpenAIStream(response);
-    return new StreamingTextResponse(stream);
+    try {
+      const stream = OpenAIStream(response);
+      return new StreamingTextResponse(stream);
+    } catch (error) {
+      console.error(error);
+      return Response.json({ error: "HERERERERERERE" }, { status: 500 });
+    }
   } catch (error) {
     console.error(error);
     return Response.json({ error: "Internal server error" }, { status: 500 });
