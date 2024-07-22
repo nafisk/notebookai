@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AiChatBot from "./AiChatBot";
+import AiChatBot from "./AiChatBox";
 import { Button } from "./ui/button";
 import { Bot } from "lucide-react";
 

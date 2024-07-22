@@ -1,7 +1,7 @@
 import { notesIndex } from "@/lib/db/pinecone";
 import prisma from "@/lib/db/prisma";
 import openai, { getEmbedding } from "@/lib/openai";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import { ChatCompletionMessage } from "openai/resources/index.mjs";
 
