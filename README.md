@@ -12,7 +12,7 @@
   <p align="center">
     A powerful note-taking application to organize your thoughts and ideas.
     <br />
-    <a href="https://github.com/nafisk/notebookai/assets/demo.mp4">View Demo</a>
+    <a href="src/app/assets/demo.gif">View Demo</a>
     ·
     <a href="https://github.com/nafisk/notebookai/issues">Report Bug</a>
     ·
@@ -57,9 +57,10 @@ Here's why:
 [Zod-url]: https://zod.dev/
 [Vercel-url]: https://vercel.com/
 
-### Demo
+## Demo
 
-https://github.com/nafisk/notebookai/assets/demo.mp4
+<img src="src/app/assets/demo.gif" />
+<img src='' width='100%'/>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
