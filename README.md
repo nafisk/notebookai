@@ -45,8 +45,6 @@ Here's why:
 
 </div>
 
-<!-- URL links -->
-
 [Next.js-url]: https://nextjs.org/
 [TypeScript-url]: https://www.typescriptlang.org/
 [Tailwind-url]: https://tailwindcss.com/
@@ -60,7 +58,6 @@ Here's why:
 ## Demo
 
 <img src="src/app/assets/demo.gif" />
-<img src='' width='100%'/>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
