@@ -10,7 +10,7 @@ export default function Home() {
   if (userId) redirect("/notes");
 
   return (
-    <main className="flex h-screen flex-col items-center justify-center gap-5">
+    <main className="bg-notebook-lines flex h-screen flex-col items-center justify-center gap-5 text-black dark:text-white">
       <div className="flex items-center gap-4">
         <Image src={logo} width={100} height={100} alt="Logo" />
         <span className="text-4xl font-extrabold tracking-tight lg:text-5xl">
@@ -18,7 +18,7 @@ export default function Home() {
         </span>
       </div>
       <p className="max-w-prose text-center">
-        intelligent ai note-taking app for students and professionals
+        an intelligent ai note-taking app for students and professionals
       </p>
       <Button size="lg" asChild>
         <Link href="/notes">Open Notes</Link>
