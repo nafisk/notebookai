@@ -12,7 +12,6 @@
   <p align="center">
     A powerful note-taking application to organize your thoughts and ideas.
     <br />
-    <br />
     <a href="https://github.com/nafisk/notebookai/assets/demo.mp4">View Demo</a>
     ·
     <a href="https://github.com/nafisk/notebookai/issues">Report Bug</a>
