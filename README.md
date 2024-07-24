@@ -29,8 +29,6 @@ Here's why:
 - **Your time should be focused on creating something amazing.** NotebookAI provides a streamlined interface that allows you to focus on taking notes and organizing your thoughts without unnecessary distractions.
 - **You should implement DRY (Don't Repeat Yourself) principles to the rest of your life.** NotebookAI ensures that your notes are easily searchable and organized, saving you time and effort in the long run.
 
-
-
 ### Built With
 
 <div align="center">
@@ -48,6 +46,7 @@ Here's why:
 </div>
 
 <!-- URL links -->
+
 [Next.js-url]: https://nextjs.org/
 [TypeScript-url]: https://www.typescriptlang.org/
 [Tailwind-url]: https://tailwindcss.com/
@@ -58,23 +57,22 @@ Here's why:
 [Zod-url]: https://zod.dev/
 [Vercel-url]: https://vercel.com/
 
-
-
 ### Demo
 
 https://github.com/nafisk/notebookai/assets/demo.mp4
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## Getting Started
 
 ### Installation
 
-1. Clone the repo 
-```sh 
+1. Clone the repo
+
+```sh
 git clone https://github.com/nafisk/notebookai.git
 ```
+
 2. Install the dependencies by running `npm i`.
 3. Create an OpenAI and a Pinecone account for API keys
 4. Create an `.env` file, populated with the values specified in the `.env.example` file
@@ -99,42 +97,33 @@ npm run dev
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-
 ## Features
 
 ### Note Management
+
 - Create and Edit Notes: Users can create new notes and edit existing ones using a rich text editor
 - Tagging System: Organize your notes with tags for easy searchability (currently being worked on)
 
 ### User Authentication
+
 - Secure Login: User authentication is managed using Clerk.
 - User Profiles: Each user has a profile where they can manage their personal information.
 
 ### Advanced Search
+
 - Search Functionality: Users can search their notes by keywords, tags, or dates using Pinecone for enhanced search capabilities.
 
 ### Theming
+
 - Dark Mode: The application supports dark mode for comfortable note-taking in low-light environments.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-
 
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-
 
 ## Contact
 
