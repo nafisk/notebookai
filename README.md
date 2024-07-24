@@ -138,8 +138,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Nafis Khan - [@nafisxk](https://twitter.com/nafisxk) - nafisrizwank@gmail.com
-
-Project Link: [https://github.com/nafisk/notebookai](https://github.com/nafisk/notebookai)
+Nafis Khan - [LinkedIn](https://www.linkedin.com/in/nafisrk/) · [Email](nafisrizwank@gmail.com) · [Twitter](https://twitter.com/nafisxk)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
