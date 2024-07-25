@@ -57,12 +57,7 @@ Here's why:
 
 ## Demo
 
-<div align="center">
-  <video width="100%" controls>
-    <source src="https://github.com/nafisk/notebookai/blob/main/src/app/assets/demo.gif" >
-    Your browser does not support the video tag.
-  </video>
-</div>
+<img src="src/app/assets/demo.gif" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
