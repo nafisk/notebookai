@@ -18,7 +18,7 @@ export default function Home() {
         </span>
       </div>
       <p className="max-w-prose text-center">
-        an intelligent ai note-taking app for students and professionals
+        A powerful note-taking application to organize your thoughts and ideas.
       </p>
       <Button size="lg" asChild>
         <Link href="/notes">Open Notes</Link>
