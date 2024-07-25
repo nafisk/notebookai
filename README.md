@@ -6,8 +6,9 @@
   <a href="https://github.com/nafisk/notebookai">
     <img src="./src/app/assets/favicon_package_v0.16/android-chrome-512x512.png" alt="Logo" height="140">
   </a>
+  
+  <h3 align="center"><a href="https://notebookai.nafisk.com/">NotebookAI</a></h3>
 
-  <h3 align="center">NotebookAI</h3>
 
   <p align="center">
     A powerful note-taking application to organize your thoughts and ideas.
