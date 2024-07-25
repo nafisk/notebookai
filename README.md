@@ -9,7 +9,6 @@
   
   <h3 align="center"><a href="https://notebookai.nafisk.com/">NotebookAI</a></h3>
 
-
   <p align="center">
     A powerful note-taking application to organize your thoughts and ideas.
     <br />
@@ -58,7 +57,12 @@ Here's why:
 
 ## Demo
 
-<img src="src/app/assets/demo.gif" />
+<div align="center">
+  <video width="100%" controls>
+    <source src="https://github.com/nafisk/notebookai/blob/main/src/app/assets/demo.gif" >
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
